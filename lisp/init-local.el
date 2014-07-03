@@ -88,4 +88,8 @@
 
 (require 'elixir-mode)
 
+(require 'unicode-fonts)
+(unicode-fonts-setup)
+
+
 (provide 'init-local) ;;;
