@@ -91,5 +91,9 @@
 (require 'unicode-fonts)
 (unicode-fonts-setup)
 
+(require 'go-mode)
+(require 'go-autocomplete)
+(require 'go-direx)
 
-(provide 'init-local) ;;;
+
+(provide 'init-local)
