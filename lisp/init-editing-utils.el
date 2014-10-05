@@ -14,12 +14,9 @@
  buffers-menu-max-size 30
  case-fold-search t
  column-number-mode t
- compilation-scroll-output t
  delete-selection-mode t
  ediff-split-window-function 'split-window-horizontally
  ediff-window-setup-function 'ediff-setup-windows-plain
- grep-highlight-matches t
- grep-scroll-output t
  indent-tabs-mode nil
  make-backup-files nil
  mouse-yank-at-point t
@@ -31,9 +28,6 @@
  truncate-lines nil
  truncate-partial-width-windows nil
  visible-bell t)
-
-(when *is-a-mac*
-  (setq-default locate-command "mdfind"))
 
 (global-auto-revert-mode)
 (setq global-auto-revert-non-file-buffers t
@@ -245,22 +239,6 @@
 (global-set-key [M-S-up] 'md/move-lines-up)
 (global-set-key [M-S-down] 'md/move-lines-down)
 
-;; Temporary patch pending https://github.com/wyuenho/move-dup/pull/4
-(after-load 'move-dup
-  (defun md/move-line (&optional n)
-    "Interactive function to move the current line N line.
-
-If the prefix N is positive, this function moves the current line
-forward N lines; otherwise backward."
-    (interactive "*p")
-    (let ((col (current-column)))
-      (goto-char (save-excursion
-                   (push-mark)
-                   (end-of-line)
-                   (md/move-region n)
-                   (region-beginning)))
-      (move-to-column col))))
-
 (global-set-key (kbd "C-c p") 'md/duplicate-down)
 (global-set-key (kbd "C-c P") 'md/duplicate-up)
 
@@ -355,14 +333,6 @@ With arg N, insert N newlines."
 
 
 
-(when (executable-find "ag")
-  (require-package 'ag)
-  (require-package 'wgrep-ag)
-  (setq-default ag-highlight-search t)
-  (global-set-key (kbd "M-?") 'ag-project))
-
-
-
 (require-package 'highlight-escape-sequences)
 (hes-mode)
 
