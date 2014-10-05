@@ -27,6 +27,14 @@
      (define-key dired-mode-map "/" 'dired-isearch-filenames)))
 
 
+(set-default 'truncate-lines t)
+
+;; set default tab char's display width to 4 spaces
+(setq-default tab-width 4) ; emacs 23.1, 24.2, default to 8
+
+;; set current buffer's tab char's display width to 4 spaces
+(setq tab-width 4)
+
 ;; Pretty mode
 
 (require  'pretty-mode)
@@ -82,7 +90,8 @@
 (add-hook 'before-save-hook
   '(lambda()
      (save-excursion
-       (untabify (point-min) (point-max))
+       (untabify (point-min)
+                 (point-max))
        (delete-trailing-whitespace))))
 
 
@@ -94,6 +103,16 @@
 (require 'go-mode)
 (require 'go-autocomplete)
 (require 'go-direx)
+
+(require 'slim-mode)
+
+;; TreeTop
+(add-to-list 'load-path "~/.emacs.d/site-lisp")
+(require 'treetop-mode)
+(autoload 'treetop-mode "treetop-mode" "Major mode for treetop files" t)
+(add-to-list 'auto-mode-alist '("\\.tt$" . treetop-mode))
+(add-to-list 'interpreter-mode-alist '("treetop" . treetop-mode))
+
 
 
 (provide 'init-local)
