@@ -1,8 +1,9 @@
 (require-package 'unfill)
-(require-package 'whole-line-or-region)
 
 (when (fboundp 'electric-pair-mode)
   (electric-pair-mode))
+(when (fboundp 'electric-indent-mode)
+  (electric-indent-mode))
 
 ;;----------------------------------------------------------------------------
 ;; Some basic preferences
@@ -44,7 +45,7 @@
 
 ;; But don't show trailing whitespace in SQLi, inf-ruby etc.
 (dolist (hook '(special-mode-hook
-                eww-mode
+                eww-mode-hook
                 term-mode-hook
                 comint-mode-hook
                 compilation-mode-hook
@@ -260,6 +261,7 @@
 ;;----------------------------------------------------------------------------
 ;; Cut/copy the current line if no region is active
 ;;----------------------------------------------------------------------------
+(require-package 'whole-line-or-region)
 (whole-line-or-region-mode t)
 (diminish 'whole-line-or-region-mode)
 (make-variable-buffer-local 'whole-line-or-region-mode)
