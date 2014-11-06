@@ -114,10 +114,17 @@
 (add-to-list 'interpreter-mode-alist '("treetop" . treetop-mode))
 
 
-(require 'sml-mode)
-(autoload 'sml-mode "sml-mode" "Major mode for editing SML." t)
-(autoload 'run-sml "sml-proc" "Run an inferior SML process." t)
-(add-to-list 'auto-mode-alist '("\\.\\(sml\\|sig\\)\\'" . sml-mode))
+;;(require 'sml-mode)
+;;(autoload 'sml-mode "sml-mode" "Major mode for editing SML." t)
+;;(autoload 'run-sml "sml-proc" "Run an inferior SML process." t)
+;;(add-to-list 'auto-mode-alist '("\\.\\(sml\\|sig\\)\\'" . sml-mode))
+
+
+(when (>= emacs-major-version 24)
+      (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+      (load "~/.emacs.d/themes/aerique-dark-theme")
+      (load-theme 'aerique-dark t))
+
 
 
 (provide 'init-local)
