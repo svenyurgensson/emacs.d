@@ -121,10 +121,15 @@
 
 
 (when (>= emacs-major-version 24)
-      (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-      (load "~/.emacs.d/themes/aerique-dark-theme")
-      (load-theme 'aerique-dark t))
+  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+  (load "~/.emacs.d/themes/aerique-dark-theme")
+  (load-theme 'aerique-dark t))
 
 
+(require 'rvm)
+
+
+(defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
+  (rvm-activate-corresponding-ruby))
 
 (provide 'init-local)
