@@ -113,6 +113,7 @@
 (add-to-list 'auto-mode-alist '("\\.tt$" . treetop-mode))
 (add-to-list 'interpreter-mode-alist '("treetop" . treetop-mode))
 
+(add-auto-mode 'ruby-mode "\\.cr\\'")
 
 ;;(require 'sml-mode)
 ;;(autoload 'sml-mode "sml-mode" "Major mode for editing SML." t)
