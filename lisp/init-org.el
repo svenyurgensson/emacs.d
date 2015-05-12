@@ -31,7 +31,8 @@
     (unwind-protect
         (progn
           (when (executable-find "unzip")
-            (url-copy-file "http://switch.dl.sourceforge.net/project/ditaa/ditaa/0.9/ditaa0_9.zip" zip-temp)
+            ;;(url-copy-file "http://switch.dl.sourceforge.net/project/ditaa/ditaa/0.9/ditaa0_9.zip" zip-temp)
+            (url-copy-file "http://downloads.sourceforge.net/project/ditaa/ditaa/0.9/ditaa0_9.zip" zip-temp)
             (shell-command (concat "unzip -p " zip-temp " ditaa0_9.jar > "
                                    (shell-quote-argument org-ditaa-jar-path)))))
       (when (file-exists-p zip-temp)
