@@ -108,7 +108,7 @@
 
 ;; TreeTop
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
-(require-package 'treetop-mode)
+(require 'treetop-mode)
 (autoload 'treetop-mode "treetop-mode" "Major mode for treetop files" t)
 (add-to-list 'auto-mode-alist '("\\.tt$" . treetop-mode))
 (add-to-list 'interpreter-mode-alist '("treetop" . treetop-mode))
