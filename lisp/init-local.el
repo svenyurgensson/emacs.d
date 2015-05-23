@@ -97,7 +97,7 @@
 
 (require-package 'elixir-mode)
 
-(require 'unicode-fonts)
+(require-package 'unicode-fonts)
 (unicode-fonts-setup)
 
 (require-package 'go-mode)
