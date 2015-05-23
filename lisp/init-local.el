@@ -37,7 +37,7 @@
 
 ;; Pretty mode
 
-(require  'pretty-mode)
+(require-package  'pretty-mode)
 (add-hook 'ruby-mode 'turn-on-pretty-mode)
 (add-hook 'clojure-mode 'turn-on-pretty-mode)
 
@@ -95,20 +95,20 @@
        (delete-trailing-whitespace))))
 
 
-(require 'elixir-mode)
+(require-package 'elixir-mode)
 
 (require 'unicode-fonts)
 (unicode-fonts-setup)
 
-(require 'go-mode)
-(require 'go-autocomplete)
-(require 'go-direx)
+(require-package 'go-mode)
+(require-package 'go-autocomplete)
+(require-package 'go-direx)
 
-(require 'slim-mode)
+(require-package 'slim-mode)
 
 ;; TreeTop
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
-(require 'treetop-mode)
+(require-package 'treetop-mode)
 (autoload 'treetop-mode "treetop-mode" "Major mode for treetop files" t)
 (add-to-list 'auto-mode-alist '("\\.tt$" . treetop-mode))
 (add-to-list 'interpreter-mode-alist '("treetop" . treetop-mode))
@@ -127,7 +127,7 @@
   (load-theme 'aerique-dark t))
 
 
-(require 'rvm)
+(require-package 'rvm)
 
 
 (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
