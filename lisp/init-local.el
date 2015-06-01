@@ -103,8 +103,13 @@
 (require-package 'go-mode)
 (require-package 'go-autocomplete)
 (require-package 'go-direx)
-
 (require-package 'slim-mode)
+
+
+(require-package 'electric-spacing-mode)
+(add-hook 'ruby-mode-hook #'electric-spacing-mode)
+(add-hook 'elixir-mode-hook #'electric-spacing-mode)
+(add-hook 'go-mode-hook #'electric-spacing-mode)
 
 ;; TreeTop
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
