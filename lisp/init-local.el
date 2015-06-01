@@ -106,7 +106,7 @@
 (require-package 'slim-mode)
 
 
-(require-package 'electric-spacing-mode)
+(require-package 'electric-spacing)
 (add-hook 'ruby-mode-hook #'electric-spacing-mode)
 (add-hook 'elixir-mode-hook #'electric-spacing-mode)
 (add-hook 'go-mode-hook #'electric-spacing-mode)
