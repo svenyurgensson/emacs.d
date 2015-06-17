@@ -1,3 +1,6 @@
+;;; package --- Summary
+;;; Code:
+;;; Commentary:
 (defun select-previous-window ()
   "Switch to the previous window"
   (interactive)
@@ -10,6 +13,9 @@
 
 (global-set-key (kbd "C-x C-g") 'magit-status)
 (global-set-key (kbd "C-x .") 'align-regexp)
+
+(global-set-key (kbd "C-c m c") 'mc/edit-lines)
+
 
 (defun switch-to-other-buffer ()
   (interactive)
@@ -129,8 +135,10 @@
 
 (require-package 'rvm)
 
-
 (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
   (rvm-activate-corresponding-ruby))
 
-(provide 'init-local)
+
+
+
+(provide 'init-local);;;
