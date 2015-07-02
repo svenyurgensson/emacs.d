@@ -126,7 +126,6 @@
 (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
   (rvm-activate-corresponding-ruby))
 
-
-
+(setq magit-last-seen-setup-instructions "1.4.0")
 
 (provide 'init-local);;;
