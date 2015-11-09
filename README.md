@@ -19,6 +19,7 @@ config adds improved defaults and extended support for the following:
 * Python
 * PHP
 * Haskell
+* Elm
 * Erlang
 * Common Lisp (with Slime)
 
@@ -33,6 +34,10 @@ degrade smoothly - see the Travis build - but note that Emacs 24 and
 above is required for an increasing number of key packages, including
 `magit` and `flycheck`, so to get full you should use the latest Emacs
 version available to you.
+
+Some Windows users might need to follow
+[these instructions](http://xn--9dbdkw.se/diary/how_to_enable_GnuTLS_for_Emacs_24_on_Windows/index.en.html)
+to get TLS (ie. SSL) support included in their Emacs.
 
 ## Other requirements
 
