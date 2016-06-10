@@ -47,6 +47,8 @@
 (add-hook 'ruby-mode 'turn-on-pretty-mode)
 (add-hook 'clojure-mode 'turn-on-pretty-mode)
 
+(add-hook 'ruby-mode #'global-flycheck-mode)
+
 ;; TODO/FIXME/BUG
 ;;
 ;; Highlight TODOs everywhere
@@ -143,9 +145,6 @@
      (require 'tern-auto-complete)
      (tern-ac-setup)))
 
-
-(fset 'translate
-      [?\{ ?\C-d ?z backspace ?  ?z ?h ?: ?  ?\' ?\C-e ?\' ?, ?  ?  ?r ?u ?s ?e backspace ?: ?  ?\' ?\' ?  ?\} ?,])
 
 
 (provide 'init-local);;;
