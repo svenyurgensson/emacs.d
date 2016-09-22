@@ -146,5 +146,9 @@
      (tern-ac-setup)))
 
 
+(autoload 'crystal-mode "crystal-mode" "Major mode for crystal files" t)
+(add-to-list 'auto-mode-alist '("\\.cr$" . crystal-mode))
+(add-to-list 'interpreter-mode-alist '("crystal" . crystal-mode))
+
 
 (provide 'init-local);;;
