@@ -150,5 +150,19 @@
 (add-to-list 'auto-mode-alist '("\\.cr$" . crystal-mode))
 (add-to-list 'interpreter-mode-alist '("crystal" . crystal-mode))
 
+(set-variable 'magit-emacsclient-executable "/usr/local/Cellar/emacs/25.1/bin/emacsclient")
+
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8-unix)
+
+;;(set-face-font 'default "-unknown-losevka Regular-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
+
+
+(require 'google-translate)
+(require 'google-translate-smooth-ui)
+(global-set-key "\C-ct" 'google-translate-smooth-translate)
+(setq google-translate-translation-directions-alist
+      '(("zh-CN" . "ru") ("zh-CN" . "en")))
+
 
 (provide 'init-local);;;
