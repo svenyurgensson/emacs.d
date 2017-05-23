@@ -164,5 +164,7 @@
 (setq google-translate-translation-directions-alist
       '(("zh-CN" . "ru") ("zh-CN" . "en")))
 
+(autoload 'rjsx-mode "jsx-mode" "Editing jsx filed" t)
+(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
 
 (provide 'init-local);;;
