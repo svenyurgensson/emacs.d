@@ -47,6 +47,15 @@
       (unless (file-exists-p org-ditaa-jar-path)
         (sanityinc/grab-ditaa url jar-name)))))
 
+(after-load 'ob-plantuml
+  (let ((jar-name "plantuml.jar")
+        (url "https://phoenixnap.dl.sourceforge.net/project/plantuml/plantuml.jar"))
+    (setq org-plantuml-jar-path (expand-file-name jar-name (file-name-directory user-init-file)))
+    (unless (file-exists-p org-plantuml-jar-path)
+      (url-copy-file url org-plantuml-jar-path))))
+
+
+
 
 
 (maybe-require-package 'writeroom-mode)
@@ -93,7 +102,7 @@ typical word processor."
 (global-set-key (kbd "C-c c") 'org-capture)
 
 (setq org-capture-templates
-      `(("t" "todo" entry (file "")  ; "" => org-default-notes-file
+      `(("t" "todo" entry (file "")  ; "" => `org-default-notes-file'
          "* NEXT %?\n%U\n" :clock-resume t)
         ("n" "note" entry (file "")
          "* %? :NOTE:\n%U\n%a\n" :clock-resume t)
@@ -368,6 +377,7 @@ typical word processor."
      (ledger . t)
      (ocaml . nil)
      (octave . t)
+     (plantuml . t)
      (python . t)
      (ruby . t)
      (screen . nil)
