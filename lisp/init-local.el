@@ -7,7 +7,6 @@
   (select-window (previous-window)))
 (global-set-key (kbd "C-x p") 'select-previous-window)
 
-
 (global-set-key (kbd "M-v") 'cua-scroll-down)
 (global-set-key (kbd "M-o") 'occur)
 
@@ -150,7 +149,7 @@
 (add-to-list 'auto-mode-alist '("\\.cr$" . crystal-mode))
 (add-to-list 'interpreter-mode-alist '("crystal" . crystal-mode))
 
-(set-variable 'magit-emacsclient-executable "/usr/local/Cellar/emacs/25.1/bin/emacsclient")
+(set-variable 'magit-emacsclient-executable "/usr/local/Cellar/emacs-mac/emacs-25.3-mac-6.7/bin/emacsclient")
 
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8-unix)
