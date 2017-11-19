@@ -129,11 +129,9 @@
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
-
 (require-package 'toggle-quotes)
 
 (global-set-key (kbd "C-M-'") 'toggle-quotes)
-
 
 
 (require-package 'tern)
@@ -183,5 +181,7 @@
 )))
 
 
+(require-package 'ace-window)
+(global-set-key (kbd "C-x o") 'ace-window)
 
 (provide 'init-local);;;
