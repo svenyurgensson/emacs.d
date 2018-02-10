@@ -184,4 +184,9 @@
 (require-package 'ace-window)
 (global-set-key (kbd "C-x o") 'ace-window)
 
+'(flycheck-check-syntax-automatically (quote (save idle-change mode-enabled)))
+'(flycheck-idle-change-delay 4) ;; Set delay based on what suits you the best
+
+'(inferior-lisp-program "clisp")
+
 (provide 'init-local);;;
