@@ -137,7 +137,8 @@
 (require-package 'dsvn)
 (when *is-a-mac*
   (require-package 'osx-location))
-(maybe-require-package 'regex-tool)
+(unless (eq system-type 'windows-nt)
+  (maybe-require-package 'daemons))
 (maybe-require-package 'dotenv-mode)
 
 (when (maybe-require-package 'uptimes)
