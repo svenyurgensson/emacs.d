@@ -150,7 +150,7 @@
 (add-to-list 'auto-mode-alist '("\\.cr$" . crystal-mode))
 (add-to-list 'interpreter-mode-alist '("crystal" . crystal-mode))
 
-(set-variable 'magit-emacsclient-executable "/usr/local/Cellar/emacs-mac/emacs-25.3-mac-6.7/bin/emacsclient")
+(set-variable 'magit-emacsclient-executable "/usr/local/Cellar/emacs-mac/emacs-26.1-z-mac-7.1/bin/emacsclient")
 
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8-unix)
@@ -158,11 +158,11 @@
 ;;(set-face-font 'default "-unknown-losevka Regular-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 
 
-(require 'google-translate)
-(require 'google-translate-smooth-ui)
-(global-set-key "\C-ct" 'google-translate-smooth-translate)
-(setq google-translate-translation-directions-alist
-      '(("zh-CN" . "ru") ("zh-CN" . "en")))
+;;(require 'google-translate)
+;;(require 'google-translate-smooth-ui)
+;;(global-set-key "\C-ct" 'google-translate-smooth-translate)
+;;(setq google-translate-translation-directions-alist
+;;      '(("zh-CN" . "ru") ("zh-CN" . "en")))
 
 (autoload 'rjsx-mode "jsx-mode" "Editing jsx filed" t)
 (add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
@@ -192,4 +192,13 @@
 
 '(inferior-lisp-program "clisp")
 
-(provide 'init-local);;;
+
+(defun bjm/align-whitespace (start end)
+  "Align columns by whitespace"
+  (interactive "r")
+  (align-regexp start end
+                "\\(\\s-*\\)\\s-" 1 0 t))
+
+(global-set-key (kbd "C-x ,") 'bjm/align-whitespace)
+
+(provide 'init-local) ;;;
