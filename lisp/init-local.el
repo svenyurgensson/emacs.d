@@ -1,6 +1,10 @@
 ;;; package --- Summary
 ;;; Code:
 ;;; Commentary:
+
+(require 'gnutls)
+(add-to-list 'gnutls-trustfiles "/usr/local/etc/openssl/cert.pem")
+
 (defun select-previous-window ()
   "Switch to the previous window"
   (interactive)
