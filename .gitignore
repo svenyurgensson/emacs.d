@@ -52,3 +52,4 @@ site-lisp/package/
 .cache/
 /forge-database.sqlite
 /transient
+.DS_Store
