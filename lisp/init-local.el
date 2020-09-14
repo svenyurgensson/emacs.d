@@ -5,6 +5,8 @@
 (require 'gnutls)
 (add-to-list 'gnutls-trustfiles "/usr/local/etc/openssl/cert.pem")
 
+(add-to-list 'company-backends #'company-tabnine)
+
 (defun select-previous-window ()
   "Switch to the previous window"
   (interactive)
