@@ -11,17 +11,13 @@
 
 (add-hook 'paredit-mode-hook 'maybe-map-paredit-newline)
 
-(after-load 'paredit
+(with-eval-after-load 'paredit
   (diminish 'paredit-mode " Par")
   ;; Suppress certain paredit keybindings to avoid clashes, including
   ;; my global binding of M-?
   (dolist (binding '("C-<left>" "C-<right>" "C-M-<left>" "C-M-<right>" "M-s" "M-?"))
     (define-key paredit-mode-map (read-kbd-macro binding) nil)))
 
-
-;; Compatibility with other modes
-
-(sanityinc/suspend-mode-during-cua-rect-selection 'paredit-mode)
 
 
 ;; Use paredit in the minibuffer

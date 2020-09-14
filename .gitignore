@@ -53,3 +53,5 @@ site-lisp/package/
 /forge-database.sqlite
 /transient
 .DS_Store
+/.lsp-session-v1
+/smex-items
