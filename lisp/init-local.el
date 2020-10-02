@@ -5,6 +5,7 @@
 (require 'gnutls)
 (add-to-list 'gnutls-trustfiles "/usr/local/etc/openssl/cert.pem")
 
+(require 'company-tabnine)
 (add-to-list 'company-backends #'company-tabnine)
 
 (defun select-previous-window ()
@@ -13,14 +14,13 @@
   (select-window (previous-window)))
 (global-set-key (kbd "C-x p") 'select-previous-window)
 
-(global-set-key (kbd "M-v") 'cua-scroll-down)
+(global-set-key (kbd "M-v") 'scroll-down-command)
 (global-set-key (kbd "M-o") 'occur)
 
 (global-set-key (kbd "C-x C-g") 'magit-status)
 (global-set-key (kbd "C-x .") 'align-regexp)
 
 (global-set-key (kbd "C-c m c") 'mc/edit-lines)
-
 
 (defun switch-to-other-buffer ()
   (interactive)
@@ -33,9 +33,9 @@
 (setq dired-dwim-target t)
 ;; e no longer does RET, instead does C-c C-x or whatever
 (add-hook 'dired-mode-hook
-  '(lambda ()
-     (define-key dired-mode-map "e" 'wdired-change-to-wdired-mode)
-     (define-key dired-mode-map "/" 'dired-isearch-filenames)))
+          '(lambda ()
+             (define-key dired-mode-map "e" 'wdired-change-to-wdired-mode)
+             (define-key dired-mode-map "/" 'dired-isearch-filenames)))
 
 
 (set-default 'truncate-lines t)
@@ -60,7 +60,7 @@
 
 (defun esk-add-watchwords ()
   (font-lock-add-keywords
-   nil '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\|NOCOMMIT\\DEBUG\\)"
+   nil '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\|REMOVE\\DEBUG\\)"
           1 font-lock-warning-face t))))
 (add-hook 'prog-mode-hook 'esk-add-watchwords)
 (defun esk-prog-mode-hook ()
@@ -119,13 +119,6 @@
 (require-package 'slim-mode)
 
 
-;; TreeTop
-(add-to-list 'load-path "~/.emacs.d/site-lisp")
-(require 'treetop-mode)
-(autoload 'treetop-mode "treetop-mode" "Major mode for treetop files" t)
-(add-to-list 'auto-mode-alist '("\\.tt$" . treetop-mode))
-(add-to-list 'interpreter-mode-alist '("treetop" . treetop-mode))
-
 (add-auto-mode 'ruby-mode "\\.cr\\'")
 
 (require-package 'rvm)
@@ -162,13 +155,6 @@
 (set-default-coding-systems 'utf-8-unix)
 
 ;;(set-face-font 'default "-unknown-losevka Regular-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
-
-
-;;(require 'google-translate)
-;;(require 'google-translate-smooth-ui)
-;;(global-set-key "\C-ct" 'google-translate-smooth-translate)
-;;(setq google-translate-translation-directions-alist
-;;      '(("zh-CN" . "ru") ("zh-CN" . "en")))
 
 (autoload 'rjsx-mode "jsx-mode" "Editing jsx filed" t)
 (add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
